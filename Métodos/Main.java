@@ -56,11 +56,4 @@ class Main {
 	static void imprimir(double res){
 		System.out.println("El resultado de la operacion es: "+res);
 	}
-
-
-
-
-
-
-
 }
