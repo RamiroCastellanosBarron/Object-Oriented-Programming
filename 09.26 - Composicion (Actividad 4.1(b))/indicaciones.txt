@@ -1,0 +1,19 @@
+Programación Intermedia
+Práctica
+Manejo de composición entre clases.
+
+Un examen frecuente de programación intermedia está compuesto de 4 preguntas.
+Cada pregunta tiene dos posibles respuestas falso o verdadero (F,V).
+Las respuestas correctas han sido almacenadas un arreglo unidimensional.
+
+Cree los objetos y despliegue el resultado que obtuvo en el examen.
+Será importante que aparezcan las preguntas con su información y el
+resultado al final.
+  
+            Respuesta ingresada            Respuesta correcta
+Preg 1
+Preg 2
+Preg 3
+Preg 4
+
+Calificación:_____

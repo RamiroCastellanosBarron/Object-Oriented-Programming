@@ -1,0 +1,14 @@
+String y sus métodos
+Programación Intermedia
+
+Deberís de realizar un programa que cree tres objetos
+texto capturados por el teclado utilizando tu clase Lectura.
+
+El programa deberá de mostrar lo siguiente:
+
+    1. La longitud del texto.
+    2. La cantidad de palabras que tiene el texto
+    3. La lista de palabras que encontraste.
+
+Cada uno de estos deberá estar definido en un método diferente.
+Es importante que consideres que el texto termina con punto (.).

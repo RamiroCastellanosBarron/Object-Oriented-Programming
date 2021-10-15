@@ -1,0 +1,10 @@
+Programa manejo de Strings
+Programaci�n Intermedia
+
+Ingresa una cadena de caracteres y determina mediante m�todos:
+
+1. La cantidad de vocales: utiliza el substring.
+2. Determina la cantidad de palabras encontradas: StringTokenizer
+3. Sustituye todas las palabras en la cadena por una palabra
+   proporcionada: replaceAll
+4. Convierte toda la cadena a may�sculas.

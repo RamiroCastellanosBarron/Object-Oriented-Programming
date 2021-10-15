@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.Random.*;
 
 public class Persona{
 	private String nombreCompleto;

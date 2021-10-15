@@ -1,0 +1,60 @@
+
+Programacion intermedia
+Composicion de objetos 
+Practica de laboratorio 
+
+Existen varios programas 
+Sistema tiene muchos programas.
+Cada programa tiene muchos metodos.
+
+Crear:
+    Un sistema
+    Dos programas
+    Los metodos que quieras
+
+Sistema -> Programa -> Metodo 
+
+Sistema:
+    1. Nombre (nombreSistema)
+    2. Fecha prometida (fechaPrometida)
+    3. Fecha actual (fechaActual [obtener de la computadora])
+    3. Lider del proyecto (nombreLider)
+    4. Entregado a tiempo (entregadoATiempo [boolean])
+
+if(fechaActual>fechaPrometida){
+    entregadoATiempo=true;
+}
+
+Programa:
+    1. Nombre (nombrePrograma)
+    2. Terminado (programaTerminado [boolean])
+    3. Aceptado (programaAceptado [boolean])
+
+-----------------------------------------------------------
+
+Desplegar en pantalla:
+    
+    Sistemas    Sus programas      Sus metodos
+
+    Sistema 1   Programa 1         Metodo 1
+                                   Metodo 2
+                                   Metodo 3
+                Programa 2         Metodo 1
+                                   Metodo 2
+                                   Metodo 3
+
+    El sistema fue terminado a tiempo
+
+-----------------------------------------------------------
+
+
+
+
+curso class="compadre"
+curso class="compadre"
+curso class="compadre"
+curso class="compadre"
+curso class="compadre"
+curso
+
+

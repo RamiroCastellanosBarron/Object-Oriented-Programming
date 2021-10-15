@@ -1,0 +1,27 @@
+Programación intermedia
+Ejercicios de composición
+
+Programar la boleta de calificaciones de un alumno.
+
+Alumno:
+    1. Matricula
+    2. Periodo escolar
+
+Materia: 
+    1. Clave 
+    2. Nombre 
+    3. Calificacion (3 calificaciones, una por cada parcial)
+
+Parcial:
+    1. Faltas 
+
+Mostrar promedio:
+    1. Por materia 
+    2. Por parcial 
+    3. Promedio global 
+    4. Faltas por parcial 
+    5. Faltas por materia 
+    6. Faltas totales
+
+Desplegar boleta de calificaciones (formato bonito)
+Desplegar promedios con dos puntos decimales.

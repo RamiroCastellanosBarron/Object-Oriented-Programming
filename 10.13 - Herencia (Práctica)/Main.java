@@ -35,7 +35,10 @@ class Alumno extends Persona {
 		this.calificacion = calificacion;
 	}
 	public double getCalificacion() {
-		return calificacion + nombre + edad;
+		return calificacion;
+	}
+	public String toString(){
+		return nombre + edad + calificacion;
 	}
 }
 
