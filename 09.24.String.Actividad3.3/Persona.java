@@ -48,6 +48,9 @@ public class Persona{
 
 	public String calcularRfc(){
 		Random rand = new Random();
+
+		String ultimoCaracter = String.valueOf((int)(Math.random()*9));
+
 		String rfc;
 		String descompuesto[]=nombreCompleto.split(" ");
 		String fDescompuesta[]=fecha.split("-");
@@ -76,7 +79,7 @@ public class Persona{
 			}
 		} while (validator == false);
 
-		rfc = descompuesto[1].substring(0,1).toUpperCase()+descompuesto[1].toUpperCase().charAt(pos)+descompuesto[2].toUpperCase().substring(0,1)+descompuesto[0].toUpperCase().substring(0,1)+fDescompuesta[2].substring(2)+fDescompuesta[1]+fDescompuesta[0]+Character.toUpperCase(randomChars[0])+Character.toUpperCase(randomChars[1])+Character.toUpperCase(randomChars[2]);
+		rfc = descompuesto[1].substring(0,1).toUpperCase()+descompuesto[1].toUpperCase().charAt(pos)+descompuesto[2].toUpperCase().substring(0,1)+descompuesto[0].toUpperCase().substring(0,1)+fDescompuesta[2].substring(2)+fDescompuesta[1]+fDescompuesta[0]+Character.toUpperCase(randomChars[0])+Character.toUpperCase(randomChars[1])+ultimoCaracter;
 
 		return rfc;
 

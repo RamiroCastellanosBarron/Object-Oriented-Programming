@@ -2,9 +2,14 @@ import java.util.*;
 
 public class Main{
 	public static void main(String[] args){
+
+		//primero estos
 		Nombre n = new Nombre(leerPrimerNombre(), leerApellidoPaterno(), leerApellidoMaterno());
 		FechaNacimiento f = new FechaNacimiento(leerDia(), leerMes(), leerAnio());
+
+		//luego la clase contenedora
 		Persona p = new Persona(n,f);
+
 		System.out.println(n);
 		System.out.println(f);
 	}
@@ -38,5 +43,4 @@ public class Main{
 		System.out.print("Ingrese el anio en que nacio: ");
 		return sc.nextLine();
 	}
-
 }

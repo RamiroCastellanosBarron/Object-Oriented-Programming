@@ -26,6 +26,7 @@ public class Main{
 					System.out.println(p);
 					System.out.println(f);
 					System.out.println(d);
+					System.out.print("\n"+"\n"+p.getEdad());
 					break;
 			case 2: 
 					Nombre n1 = new Nombre(leerPrimerNombre(), leerSegundoNombre(), leerApellidoPaterno(), leerApellidoMaterno());
