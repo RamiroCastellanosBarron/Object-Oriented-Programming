@@ -1,0 +1,15 @@
+Cada mes durante el año 2020 se han registrado el promedio de temperaturas mensuales.
+Al final del año se desea conocer cual es el mes con la temperatura mas alta. Desplegar en pantalla lo siguiente:
+
+PROMEDIO DE TEMPERATURAS EN 2020
+
+MES                       TEMPERATURA
+
+Enero                         12
+Febrero                       22
+Marzo                         28
+...                           ...
+
+Diciembre                     10
+
+Diseña tu clase Mes y define los métodos apropiados dentro de esta clase y la clase donde estará definido tu arreglo de objetos.

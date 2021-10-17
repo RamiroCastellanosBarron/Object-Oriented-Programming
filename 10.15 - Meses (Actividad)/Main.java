@@ -1,31 +1,6 @@
 import java.text.*;
 import java.util.*;
 
-class Mes {
-	private String nombreMes;
-	private double promedioTemp;
-
-	public Mes (String nombreMes, double promedioTemp) {
-		setNombreMes(nombreMes);
-		setPromedioTemp(promedioTemp);
-	}
-	public void setNombreMes(String nombreMes) {
-		this.nombreMes = nombreMes;
-	}
-	public String getNombreMes() {
-		return nombreMes;
-	}
-	public void setPromedioTemp(double promedioTemp) {
-		this.promedioTemp = promedioTemp;
-	}
-	public double getPromedioTemp() {
-		return promedioTemp;
-	}
-	public String toString(){
-		return "contenido";
-	}
-}
-
 class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

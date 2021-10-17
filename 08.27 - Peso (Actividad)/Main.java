@@ -1,10 +1,10 @@
-/*Ramiro Castellanos Barrón
+/*Ramiro Castellanos Barrï¿½n
 606938
 27 de agosto de 2021
 Un programa con objeto persona que pueda ser hombre o mujer
-que calcule el índice de grasa corporal y la masa ideal de
+que calcule el ï¿½ndice de grasa corporal y la masa ideal de
 un paciente
-Doy mi palabra de qeu he realizado esta actividad con integridad académica.*/
+Doy mi palabra de qeu he realizado esta actividad con integridad acadï¿½mica.*/
 
 import java.io.*;          //librerias
 import java.util.*;
@@ -120,8 +120,8 @@ class Principal{                                                                
    }
 }
 
-/*Autenticación y autorización (password longitud de 8 caracteres
-por lo menos, una mayúscula, un caracter especial y un número)
-Comentarios-objetivo y en métodos
-Indentación en el código
-Validación de datos en la captura (por métodos)*/
+/*Autenticaciï¿½n y autorizaciï¿½n (password longitud de 8 caracteres
+por lo menos, una mayï¿½scula, un caracter especial y un nï¿½mero)
+Comentarios-objetivo y en mï¿½todos
+Indentaciï¿½n en el cï¿½digo
+Validaciï¿½n de datos en la captura (por mï¿½todos)*/
