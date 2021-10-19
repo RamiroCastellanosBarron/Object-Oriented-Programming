@@ -29,8 +29,8 @@ public class Detalle {
 		return productos.getPrecio()*cantidad;
 	}
 	public void mostrarDetalle() {
+		DecimalFormat w = new DecimalFormat("#,###,###.00");
 		String formatoDetalle = "| %11s | %-8s | %-8s | %-67s | %12s | %11s |%n";
-		DecimalFormat w = new DecimalFormat("0.00");
 		System.out.printf(formatoDetalle, w.format(getCantidad()), productos.getIdProducto(), productos.getUnidad(), productos.getDescripcion(), "$" + w.format(productos.getPrecio()), "$" + w.format(getImporte()));
 	}
 }

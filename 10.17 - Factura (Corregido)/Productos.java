@@ -45,7 +45,7 @@ public class Productos {
 		return precio;
 	}
 	public void mostrarProductos() {
-		DecimalFormat w = new DecimalFormat("0.00");
+		DecimalFormat w = new DecimalFormat("#,###,###.00");
 		String formato = "| %6s | %-20s | %-65s | %-16s | %13s |%n";
 		System.out.printf(formato, idProducto, nomProducto, descripcion, unidad, "$" + w.format(precio));
 	}
