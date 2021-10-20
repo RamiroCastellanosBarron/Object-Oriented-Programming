@@ -4,7 +4,9 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-
+		String nombre1 = "Ramiro";
+		String nombre2 = "Ramiro";
+		String nombre3 = "Ramiro";
 		DecimalFormat w = new DecimalFormat("#,###,###.00");
 		Scanner sc = new Scanner(System.in);
 		Scanner sc2 = new Scanner(System.in);
