@@ -1,12 +1,8 @@
-import java.lang.reflect.Method;
-import java.text.DecimalFormat;
+import java.text.*;
 import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-		String nombre1 = "Ramiro";
-		String nombre2 = "Ramiro";
-		String nombre3 = "Ramiro";
 		DecimalFormat w = new DecimalFormat("#,###,###.00");
 		Scanner sc = new Scanner(System.in);
 		Scanner sc2 = new Scanner(System.in);
@@ -26,7 +22,7 @@ public class Main {
 		p[10] = new Productos(1, " ", "PIEZAS", " ", 0.00f);
 
 		//mostramos los productos
-		imprimirEncabezadoCatalogoProductos();
+		imprimirEncabezadoCatalogoProductos( );
 		for(int i = 0; i < p.length - 1; i++) {
 			p[i].mostrarProductos();
 		}
@@ -43,14 +39,13 @@ public class Main {
 		int productoSeleccionado = 0;
 		Detalle detalle[] = new Detalle[5];
 		int idProductoIngresar;
-		int detallesFaltantes = 0;
-
+		
 		//llenado vacio de detalles
 		for(int i = 0; i < detalle.length; i++) {
 			detalle[i] = new Detalle(p[10], 0, 0);
 		}
-
-
+		
+		
 		do {
 			System.out.print("\n  >>  " + "Ingrese el ID del producto por agregar: ");
 			idProductoIngresar = sc.nextInt();
@@ -198,60 +193,90 @@ public class Main {
 		}
 		imprimirOpcionRealizarFactura();
 		opcion = sc4.nextLine();
+		Scanner sc5 = new Scanner(System.in);
 		if (opcion.equals("s")) {
 			String formatoDatosCliente = "| %-28s | %63s | %-35s |%n";
-			imprimirTituloDatosCliente();
-
-			//prueba
-			// Nombre nombrePrueba = new Nombre("Ramiro", "Castellanos", "Barron");
-			// imprimirFechaNacimiento();
-			// Fecha fechaPrueba = new Fecha("02", "05", "2000");
-			// imprimirTituloDatosDireccion();
-			// Direccion direccionPrueba = new Direccion("La Gloria", "220", "Hacienda del Rosario", "San Pedro", "Nuevo Leon", "66247");
-			// Fecha fechaEmision = new Fecha("18", "10", "2021");
-			// imprimirDatosFactura();
-			// Cliente cliente = new Cliente(nombrePrueba, fechaPrueba, direccionPrueba);
-
-			//bueno
-			Nombre nombreCliente = new Nombre(leerNombreCliente(), leerApellidoPaternoCliente(), leerApellidoMaternoCliente());
-			imprimirFechaNacimiento();
-			Fecha fechaNacimiento =  new Fecha(leerDia(), leerMes(), leerAnio());
-			imprimirTituloDatosDireccion();
-			Direccion direccionCliente = new Direccion(leerCalle(), leerNumExterior(), leerColonia(), leerMunicipio(), leerEstado(), leerCodigoPostal());
-			Cliente cliente = new Cliente(nombreCliente, fechaNacimiento, direccionCliente);
-			imprimirDatosFactura();
-			Fecha fechaEmision = new Fecha(leerDia(), leerMes(), leerAnio());
-			// Factura factura = new Factura(detalle, fechaEmision, subTotalFinal, numDescuento, impuestoTicket, totalTicket, cliente);
-
-			Factura factura = new Factura(detalle, fechaEmision, subTotalFinal, numDescuento, impuestoTicket, totalTicket, cliente);
-			imprimirEncabezadoFactura();
-			System.out.printf(formatoDatosCliente, factura.getCliente().getNombre().getPrimerNombre() + " " + factura.getCliente().getNombre().getAPaterno() + " " + factura.getCliente().getNombre().getAMaterno(), " ", "Numero de factura: A 3798");
-			System.out.printf(formatoDatosCliente, factura.getCliente().rfc(), " ", fechaEmision.getDia() + "-" + fechaEmision.getMes() + "-" + fechaEmision.getAnio());
-			System.out.printf(formatoDatosCliente, factura.getCliente().getDireccion().getCalle() + " " + factura.getCliente().getDireccion().getNoExterior() + ", " + factura.getCliente().getDireccion().getCodigoP() + "," , " ", "Numero de cliente: #27");
-			System.out.printf(formatoDatosCliente, factura.getCliente().getDireccion().getMunicipio() + ", " + factura.getCliente().getDireccion().getEstado(), " ", " ");
-			imprimirPieEncabezadoFactura();
-
-			imprimirDetalleTicket();
-
-			int otroCont = 0;
-			while(contadorNumDetalle > 0) {
-				factura.mostrarDetallesFactura(contadorNumDetalle, detalle[otroCont].getCantidad(), detalle[otroCont].getProductos().getIdProducto(), detalle[otroCont].getProductos().getUnidad(), detalle[otroCont].getProductos().getDescripcion(), detalle[otroCont].getProductos().getPrecio(), detalle[otroCont].getImporte());
-				otroCont++;
-				contadorNumDetalle--;
-			}
-			imprimirPieDetalleTicket();
-			System.out.println();
-
-			imprimirSubtotalDetallePie();
-			factura.mostrarDatosFactura();
-			imprimirSubtotalDetallePie();
+			String modo = " ";
+			boolean salirCiclo = false;
+			do {
+				imprimirOpcionModo();
+				modo = sc5.nextLine();
+				if(modo.equals("n")) {
+					Nombre nombrePrueba = new Nombre("Ramiro", "Castellanos", "Barron");
+					imprimirFechaNacimiento();
+					Fecha fechaPrueba = new Fecha("02", "05", "2000");
+					imprimirTituloDatosDireccion();
+					Direccion direccionPrueba = new Direccion("La Gloria", "220", "Hacienda del Rosario", "San Pedro", "Nuevo Leon", "66247");
+					Fecha fechaEmision = new Fecha("18", "10", "2021");
+					imprimirDatosFactura();
+					Cliente cliente = new Cliente(nombrePrueba, fechaPrueba, direccionPrueba);
+					Factura factura = new Factura(detalle, fechaEmision, subTotalFinal, numDescuento, impuestoTicket, totalTicket, cliente);
+					imprimirEncabezadoFactura();
+					System.out.printf(formatoDatosCliente, factura.getCliente().getNombre().getPrimerNombre() + " " + factura.getCliente().getNombre().getAPaterno() + " " + factura.getCliente().getNombre().getAMaterno(), " ", "Numero de factura: A 3798");
+					System.out.printf(formatoDatosCliente, factura.getCliente().rfc(), " ", fechaEmision.getDia() + "-" + fechaEmision.getMes() + "-" + fechaEmision.getAnio());
+					System.out.printf(formatoDatosCliente, factura.getCliente().getDireccion().getCalle() + " " + factura.getCliente().getDireccion().getNoExterior() + ", " + factura.getCliente().getDireccion().getCodigoP() + "," , " ", "Numero de cliente: #27");
+					System.out.printf(formatoDatosCliente, factura.getCliente().getDireccion().getMunicipio() + ", " + factura.getCliente().getDireccion().getEstado(), " ", " ");
+					imprimirPieEncabezadoFactura();
+					imprimirDetalleTicket();
+					int otroCont = 0;
+					while(contadorNumDetalle > 0) {
+						factura.mostrarDetallesFactura(contadorNumDetalle, detalle[otroCont].getCantidad(), detalle[otroCont].getProductos().getIdProducto(), detalle[otroCont].getProductos().getUnidad(), detalle[otroCont].getProductos().getDescripcion(), detalle[otroCont].getProductos().getPrecio(), detalle[otroCont].getImporte());
+						otroCont++;
+						contadorNumDetalle--;
+					}
+					imprimirPieDetalleTicket();
+					System.out.println();
+					imprimirSubtotalDetallePie();
+					factura.mostrarDatosFactura();
+					imprimirSubtotalDetallePie();
+					salirCiclo = true;
+				} else if (modo.equals("s")) {
+					imprimirTituloDatosCliente();
+					Nombre nombreCliente = new Nombre(leerNombreCliente(), leerApellidoPaternoCliente(), leerApellidoMaternoCliente());
+					imprimirFechaNacimiento();
+					Fecha fechaNacimiento =  new Fecha(leerDia(), leerMes(), leerAnio());
+					imprimirTituloDatosDireccion();
+					Direccion direccionCliente = new Direccion(leerCalle(), leerNumExterior(), leerColonia(), leerMunicipio(), leerEstado(), leerCodigoPostal());
+					Cliente cliente = new Cliente(nombreCliente, fechaNacimiento, direccionCliente);
+					imprimirDatosFactura();
+					Fecha fechaEmision = new Fecha(leerDia(), leerMes(), leerAnio());
+					Factura factura = new Factura(detalle, fechaEmision, subTotalFinal, numDescuento, impuestoTicket, totalTicket, cliente);
+					imprimirEncabezadoFactura();
+					System.out.printf(formatoDatosCliente, factura.getCliente().getNombre().getPrimerNombre() + " " + factura.getCliente().getNombre().getAPaterno() + " " + factura.getCliente().getNombre().getAMaterno(), " ", "Numero de factura: A 3798");
+					System.out.printf(formatoDatosCliente, factura.getCliente().rfc(), " ", fechaEmision.getDia() + "-" + fechaEmision.getMes() + "-" + fechaEmision.getAnio());
+					System.out.printf(formatoDatosCliente, factura.getCliente().getDireccion().getCalle() + " " + factura.getCliente().getDireccion().getNoExterior() + ", " + factura.getCliente().getDireccion().getCodigoP() + "," , " ", "Numero de cliente: #27");
+					System.out.printf(formatoDatosCliente, factura.getCliente().getDireccion().getMunicipio() + ", " + factura.getCliente().getDireccion().getEstado(), " ", " ");
+					imprimirPieEncabezadoFactura();
+					imprimirDetalleTicket();
+					int otroCont = 0;
+					while(contadorNumDetalle > 0) {
+						factura.mostrarDetallesFactura(contadorNumDetalle, detalle[otroCont].getCantidad(), detalle[otroCont].getProductos().getIdProducto(), detalle[otroCont].getProductos().getUnidad(), detalle[otroCont].getProductos().getDescripcion(), detalle[otroCont].getProductos().getPrecio(), detalle[otroCont].getImporte());
+						otroCont++;
+						contadorNumDetalle--;
+					}
+					imprimirPieDetalleTicket();
+					System.out.println();
+					imprimirSubtotalDetallePie();
+					factura.mostrarDatosFactura();
+					imprimirSubtotalDetallePie();
+					salirCiclo = true;
+				}
+				if(!modo.equals("s") && !modo.equals("n")) {
+					imprimiropcionInvalida();
+					salirCiclo = false;
+				}
+			} while (salirCiclo == false);
 
 
 		} else if (opcion.equals("no")) {
 			System.out.println("params");
 		}
-
 		imprimirMensajeAdios();
+		sc.close();
+		sc2.close();
+		sc3.close();
+		sc4.close();
+		sc5.close();
 	}
 	public static void imprimirEncabezadoCatalogoProductos() {
 		System.out.format("+--------------------------------------------------------------------------------------------------------------------------------------+%n");
@@ -358,6 +383,7 @@ public class Main {
 		System.out.print("  >>  Ingrese su primer nombre: ");
 		String primerNombre = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return primerNombre;
 	}
 	public static String leerApellidoPaternoCliente() {
@@ -365,6 +391,7 @@ public class Main {
 		System.out.print("  >>  Ingrese su apellido paterno: ");
 		String apellidoPaterno = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return apellidoPaterno;
 	}
 	public static String leerApellidoMaternoCliente() {
@@ -372,6 +399,7 @@ public class Main {
 		System.out.print("  >>  Ingrese su apellido materno: ");
 		String apellidoMaterno = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return apellidoMaterno;
 	}
 	public static String leerDia() {
@@ -379,6 +407,7 @@ public class Main {
 		System.out.print("  >>  Ingrese el dia: ");
 		String dia = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return dia;
 	}
 	public static String leerMes() {
@@ -386,6 +415,7 @@ public class Main {
 		System.out.print("  >>  Ingrese el mes: ");
 		String mes = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return mes;
 	}
 	public static String leerAnio() {
@@ -393,6 +423,7 @@ public class Main {
 		System.out.print("  >>  Ingrese el anio: ");
 		String anio = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return anio;
 	}
 	public static String leerCalle() {
@@ -400,6 +431,7 @@ public class Main {
 		System.out.print("  >>  Ingrese su calle: ");
 		String calle = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return calle;
 	}
 	public static String leerNumExterior() {
@@ -407,6 +439,7 @@ public class Main {
 		System.out.print("  >>  Ingrese su numero exterior: ");
 		String numExterior = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return numExterior;
 	}
 	public static String leerColonia() {
@@ -414,6 +447,7 @@ public class Main {
 		System.out.print("  >>  Ingrese su colonia: ");
 		String colonia = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return colonia;
 	}
 	public static String leerMunicipio() {
@@ -421,6 +455,7 @@ public class Main {
 		System.out.print("  >>  Ingrese su municipio: ");
 		String municipio = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return municipio;
 	}
 	public static String leerEstado() {
@@ -428,6 +463,7 @@ public class Main {
 		System.out.print("  >>  Ingrese su estado: ");
 		String estado = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return estado;
 	}
 	public static String leerCodigoPostal() {
@@ -435,6 +471,7 @@ public class Main {
 		System.out.print("  >>  Ingrese su codigo postal: ");
 		String codigoPostal = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return codigoPostal;
 	}
 	public static String leerNombreEmpresa() {
@@ -442,6 +479,7 @@ public class Main {
 		System.out.print("  >>  Ingrese el nombre de la empresa: ");
 		String nombreEmpresa = sc.nextLine();
 		System.out.println();
+		sc.close();
 		return nombreEmpresa;
 	}
 	public static void imprimirAvisoInvalido() {
@@ -488,4 +526,15 @@ public class Main {
 		System.out.format("+------------------------------+                                                                 +-------------------------------------+%n");
 		System.out.println();
 	}
+	public static void imprimirOpcionModo() {
+		System.out.print("\n\n\n");
+		System.out.format("+--------------------------------------------------------------------------------------------------------------------------------------+%n");
+		System.out.format("|                                             DESEA CAPTURAR CLIENTE O USAR EL DEMOSTRATIVO?                                           |%n");
+		System.out.format("+-----------------------------------------------------------------+--------------------------------------------------------------------+%n");
+		System.out.format("|                         CAPTURAR = s                            |                             DEMOSTRATIVO = n                       |%n");
+		System.out.format("+-----------------------------------------------------------------+--------------------------------------------------------------------+%n");
+		System.out.println();
+		System.out.print("  >>  Ingrese su opcion: ");
+	}
+
 }
