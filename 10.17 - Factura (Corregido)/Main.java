@@ -1,8 +1,10 @@
+import java.lang.reflect.Method;
 import java.text.DecimalFormat;
 import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
+
 		DecimalFormat w = new DecimalFormat("#,###,###.00");
 		Scanner sc = new Scanner(System.in);
 		Scanner sc2 = new Scanner(System.in);
