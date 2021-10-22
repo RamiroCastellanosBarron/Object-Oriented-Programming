@@ -1,5 +1,4 @@
-import java.text.DecimalFormat;
-import java.util.*;
+import java.text.*;
 
 public class Detalle {
 	private Productos productos;

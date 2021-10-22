@@ -1,15 +1,15 @@
-class Papa {
-	protected Sting nombre;
+class Persona {
+	protected String nombre;
 	protected int edad;
 
-	public Papa (String nombre, int edad) {
+	public Persona (String nombre, int edad) {
 		setNombre(nombre);
 		setEdad(edad);
 	}
-	public void setNombre(Sting nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public Sting getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 	public void setEdad(int edad) {
@@ -19,27 +19,59 @@ class Papa {
 		return edad;
 	}
 	public String toString(){
-		return getNombre() + " " + getEdad();
+		return " ";
+	}
+	public void mostrarDatos() {
+		System.out.println(nombre + " tiene " + edad + " anios.");
 	}
 }
 
-class Hijo extends Papa {
-	public Hijo (String nombre, int edad) {
-		super(nombre, edad);
+class Hombre extends Persona {
+	private String sexo;
 
-		super.toString();
+	public Hombre (String nombre, int edad, String sexo) {
+		super(nombre, edad);
+		setSexo(sexo);
+	}
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	public String getSexo() {
+		return sexo;
+	}
+	public void mostrarDatos() {
+		System.out.println(nombre + " es " + sexo + " tiene " + edad + " anios.");
+	}
+}
+
+class Mujer extends Persona {
+	private String sexo;
+	
+	public Mujer (String nombre, int edad, String sexo) {
+		super(nombre, edad);
+		setSexo(sexo);
+	}
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	public String getSexo() {
+		return sexo;
+	}
+	public void mostrarDatos() {
+		System.out.println(nombre + " es " + sexo + " tiene " + edad + " anios.");
 	}
 }
 
 class Main {
 	public static void main(String[] args) {
-		Papa papa = new Papa("Ramiro", 21);
-		papa  h = new Hijo("Ramiro", 21);
-		System.out.println(h);
-
+		Persona persona = new Persona("Alejandro", 24);
+		Hombre hombre = new Hombre("Ramiro", 21, "Masculino");
+		Mujer mujer = new Mujer("Sofia", 18, "Femenino");
+		hombre.mostrarDatos();
+		mujer.mostrarDatos();
+		persona.mostrarDatos();
 	}
 }
-
 
 
 
